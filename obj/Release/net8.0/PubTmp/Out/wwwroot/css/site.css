@@ -1,0 +1,555 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* --- Create form styles (append to existing site.css) --- */
+
+.form-panel {
+    border-radius: 12px;
+    padding: 1.25rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+    border: 1px solid rgba(255,255,255,0.04);
+    box-shadow: 0 10px 30px rgba(2,6,23,0.55);
+}
+
+.form-panel h2 {
+    margin: 0 0 0.6rem 0;
+    font-size: 1.25rem;
+    color: #e6eef8;
+}
+
+.form-label {
+    display:block;
+    margin-bottom: .35rem;
+    color: var(--muted);
+    font-weight:600;
+    font-size:.95rem;
+}
+
+.custom-input {
+    width:100%;
+    padding:.6rem .75rem;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.01);
+    color: #e6eef8;
+    outline: none;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.01);
+    transition: box-shadow .12s ease, transform .08s ease;
+}
+
+.custom-input:focus {
+    box-shadow: 0 6px 18px rgba(124,92,255,0.12);
+    transform: translateY(-1px);
+    border-color: rgba(124,92,255,0.55);
+    background: rgba(255,255,255,0.015);
+}
+
+.form-field { margin-bottom: .9rem; }
+
+.form-actions {
+    display:flex;
+    gap:.6rem;
+    align-items:center;
+    margin-top: .75rem;
+    flex-wrap:wrap;
+}
+
+/* secondary button that matches the dark theme */
+.btn-outline-light {
+    color: var(--muted);
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.04);
+    padding:.55rem .9rem;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+.form-help {
+    font-size:.85rem;
+    color:var(--muted);
+    margin-top:.35rem;
+}
+
+/* small screens: make the right column full width */
+@media (max-width:900px){
+    .right { width:100%; max-width:100%; }
+    .left { width:100%; }
+}
+
+/* --- Home page enhancements (append to existing site.css) --- */
+
+/* subtle background overlay for hero */
+.hero {
+    background-image: linear-gradient(120deg, rgba(124,92,255,0.10), rgba(79,182,255,0.04));
+    padding: 3.5rem 2rem;
+    width: 100%;
+    max-width: 1200px; /* keep content readable on very wide screens */
+    margin: 0 auto;    /* center the hero inside the edge-to-edge layout */
+    box-sizing: border-box;
+}
+
+/* hero grid: left content and right visual */
+.hero .left { max-width: 60ch; }
+.hero .right { max-width: 420px; width: 40%; }
+
+/* hero subtitle / kicker */
+.kicker {
+    display:inline-block;
+    padding:.25rem .6rem;
+    background: linear-gradient(90deg, rgba(124,92,255,0.08), rgba(79,182,255,0.06));
+    border-radius:999px;
+    color:var(--muted);
+    font-weight:600;
+    margin-bottom:.75rem;
+}
+
+/* stats row under hero */
+.stats {
+    display:flex;
+    gap:1rem;
+    margin-top:1.25rem;
+    align-items:center;
+}
+.stat {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    padding:.6rem .85rem;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.03);
+    color:#dbe9ff;
+    min-width:110px;
+    text-align:left;
+}
+.stat .num { font-weight:700; font-size:1.05rem; color:var(--accent-2); }
+
+/* testimonial card */
+.testimonial {
+    margin-top:1.5rem;
+    padding: .85rem;
+    border-radius:10px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));
+    border:1px solid rgba(255,255,255,0.03);
+    color:#dbe9ff;
+    box-shadow: 0 8px 26px rgba(2,6,23,0.5);
+}
+
+/* visual preview: framed device with subtle glow */
+.preview-frame {
+    border-radius:12px;
+    padding: .9rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    border:1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 20px 50px rgba(79,182,255,0.04), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+
+/* callout CTA row */
+.cta-row { margin-top:1.25rem; display:flex; gap:.6rem; flex-wrap:wrap; align-items:center; }
+
+/* ghost button */
+.btn-ghost {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.06);
+    padding:.6rem .9rem;
+    border-radius:10px;
+    color:var(--muted);
+    text-decoration:none;
+}
+
+/* small animations */
+.fade-in-up { transform: translateY(6px); opacity: 0; animation: fadeUp .5s ease forwards; }
+.delay-1 { animation-delay: .06s; }
+.delay-2 { animation-delay: .12s; }
+@keyframes fadeUp { to { transform: translateY(0); opacity:1; } }
+
+/* responsive adjustments */
+@media (max-width:900px) {
+    .hero { flex-direction:column; padding:2rem; gap:1rem; }
+    .hero .right { width:100%; max-width:100%; }
+    .stats { flex-wrap:wrap; gap:.6rem; }
+}
+
+/* ---- Home / global improvements (append) ---- */
+
+/* NAVBAR adjustments so it blends with hero and stays above content */
+.navbar-top { z-index: 60; padding-top: .6rem; padding-bottom: .6rem; }
+.navbar-top .navbar-brand { font-weight: 700; color: #fff; text-shadow: 0 1px 0 rgba(0,0,0,0.25); }
+.navbar-top .nav-link { color: rgba(255,255,255,0.92); margin-left: .6rem; }
+.navbar-top .nav-link:hover { color: #fff; text-decoration: underline; }
+
+/* ensure body content doesn't hide under the absolute navbar */
+body { padding-top: 72px; }
+
+/* HERO: full-bleed outer and centered inner container */
+.hero-outer {
+    width: 100%;
+    background: linear-gradient(180deg, rgba(11,17,32,0.88), rgba(8,12,20,0.95)),
+                radial-gradient(800px 400px at 10% 10%, rgba(124,92,255,0.10), transparent 20%),
+                radial-gradient(600px 300px at 90% 80%, rgba(79,182,255,0.06), transparent 18%);
+    color: #e9f2ff;
+    padding: 4.25rem 0 4.5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 2.25rem;
+    align-items: center;
+    padding: 0 1.25rem;
+    box-sizing: border-box;
+}
+
+/* mobile fallback: single column */
+@media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding: 0 1rem; gap: 1.25rem; }
+    body { padding-top: 64px; }
+}
+
+/* left content */
+.hero .left { max-width: 64ch; }
+.display-4 {
+    font-size: 2.6rem;
+    line-height: 1.02;
+    margin: 0 0 .5rem 0;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    color: #fff;
+    text-wrap: balance;
+}
+.display-4 strong { color: #a6d8ff; }
+
+/* kicker */
+.kicker {
+    display:inline-block;
+    padding:.28rem .65rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.03);
+    color: rgba(255,255,255,0.85);
+    font-weight:600;
+    font-size: .9rem;
+    margin-bottom: .8rem;
+    border: 1px solid rgba(255,255,255,0.02);
+}
+
+/* lead */
+.lead { color: rgba(235,245,255,0.78); font-size: 1.05rem; margin-bottom: .75rem; }
+
+/* CTAs */
+.cta {
+    display:inline-flex;
+    align-items:center;
+    gap:.6rem;
+    padding:.7rem 1.05rem;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #7c5cff 0%, #4fb6ff 100%);
+    color: #041226;
+    font-weight:700;
+    box-shadow: 0 14px 34px rgba(79,182,255,0.08);
+    text-decoration:none;
+}
+.cta.secondary {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.92);
+    padding:.66rem .95rem;
+}
+
+/* stats */
+.stats { display:flex; gap:.8rem; margin-top:1.1rem; align-items:center; flex-wrap:wrap; }
+.stat {
+    background: rgba(255,255,255,0.02);
+    padding:.55rem .75rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.03);
+    color: #eaf6ff;
+    min-width:110px;
+}
+.stat .num { font-weight:700; color:#cde9ff; font-size:1.05rem; }
+
+/* right preview */
+.preview-frame {
+    border-radius: 14px;
+    padding: .9rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    border:1px solid rgba(255,255,255,0.04);
+    box-shadow: 0 20px 60px rgba(10,20,40,0.6);
+}
+
+/* decorative floating shapes */
+.hero-blob {
+    position: absolute;
+    right: -120px;
+    top: -80px;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle at 30% 30%, rgba(124,92,255,0.10), transparent 20%),
+                radial-gradient(circle at 70% 70%, rgba(79,182,255,0.06), transparent 18%);
+    filter: blur(42px);
+    transform: rotate(12deg);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* small animation and entrance */
+.fade-in { opacity: 0; transform: translateY(8px); animation: fadeInUp .6s ease forwards; }
+.fade-in.delay-1 { animation-delay: .06s; }
+.fade-in.delay-2 { animation-delay: .12s; }
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+/* keep hero centered on extremely wide displays */
+.container-fluid.px-0 .hero { margin-left:auto; margin-right:auto; }
+
+/* footer tweak for dark hero pages */
+footer.border-top { border-top-color: rgba(255,255,255,0.04); background: rgba(6,10,18,0.95); color: rgba(255,255,255,0.7); }
+
+/* --- Preview table improvements for Customers (append) --- */
+
+/* make right column a bit wider and flexible */
+.hero {
+    grid-template-columns: 1fr minmax(480px, 640px); /* was 1fr 420px */
+}
+
+/* preview frame: allow scrolling and consistent min height */
+.preview-frame {
+    overflow: auto;
+    min-height: 260px;
+}
+
+/* ensure the table inside preview uses a sensible min width so columns don't collapse */
+.preview-frame .table {
+    min-width: 560px;
+    margin-bottom: 0;
+    table-layout: auto; /* allow columns to size to content */
+    width: 100%;
+}
+
+/* cell layout and spacing */
+.preview-frame th,
+.preview-frame td {
+    padding: .75rem 1rem;
+    vertical-align: middle;
+    color: #e6eef8;
+}
+
+/* keep small columns from wrapping */
+.preview-frame td.id,
+.preview-frame td.created,
+.preview-frame th {
+    white-space: nowrap;
+}
+
+/* email should wrap when needed (no forced ellipsis) */
+.preview-frame td.email {
+    max-width: none;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* keep name on a single, readable line */
+.preview-frame td.name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* subtle divider for rows */
+.preview-frame tbody tr {
+    border-bottom: 1px solid rgba(255,255,255,0.02);
+}
+
+/* on small screens allow the preview to be full width and table to scroll horizontally */
+@media (max-width:900px) {
+    .preview-frame .table { min-width: 480px; }
+}
+
+/* Customers: make preview expand to fill available space (append) */
+
+/* Let hero content align to the top so right column can grow vertically */
+.hero { align-items: start; }
+
+/* Target only pages that opt into a full hero layout (we add .full on the Customers page) */
+.hero-outer.full .hero {
+  max-width: none;            /* allow full width inside the outer band */
+  width: calc(100% - 2.5rem);
+  grid-template-columns: 1fr minmax(640px, 1fr); /* give right column plenty of room */
+  gap: 2.5rem;
+  padding: 0 1.25rem;
+}
+
+/* Make the preview use the remaining vertical space and scroll if needed */
+.hero-outer.full .right,
+.hero-outer.full .preview-frame {
+  height: calc(100vh - 160px); /* adjust 160px if header/hero padding differ */
+  min-height: 360px;
+  box-sizing: border-box;
+}
+
+/* Keep preview scrollable */
+.hero-outer.full .preview-frame {
+  overflow: auto;
+  display: block;
+}
+
+/* Make table fill the preview width and use a predictable column layout */
+.hero-outer.full .preview-frame .table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-bottom: 0;
+}
+
+/* Column proportions: ID small, Name medium, Email largest, Created small */
+.hero-outer.full .preview-frame thead th:nth-child(1),
+.hero-outer.full .preview-frame tbody td.id { width: 8%; }
+.hero-outer.full .preview-frame thead th:nth-child(2),
+.hero-outer.full .preview-frame tbody td.name { width: 32%; }
+.hero-outer.full .preview-frame thead th:nth-child(3),
+.hero-outer.full .preview-frame tbody td.email { width: 44%; }
+.hero-outer.full .preview-frame thead th:nth-child(4),
+.hero-outer.full .preview-frame tbody td.created { width: 16%; }
+
+/* Improve overflow behavior: emails wrap at sensible points */
+.hero-outer.full .preview-frame td.email {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  padding-right: 0.8rem;
+}
+
+/* Keep name on a single readable line (use ellipsis if too long) */
+.hero-outer.full .preview-frame td.name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Row spacing */
+.hero-outer.full .preview-frame td,
+.hero-outer.full .preview-frame th {
+  padding: .85rem 1rem;
+  vertical-align: middle;
+}
+
+/* If the viewport is narrow, allow horizontal scroll rather than compressing columns */
+@media (max-width: 900px) {
+  .hero-outer.full .hero { grid-template-columns: 1fr; }
+  .hero-outer.full .preview-frame { height: auto; min-height: auto; overflow: auto; }
+  .hero-outer.full .preview-frame .table { min-width: 700px; }
+}
+
+/* --- Full-width customers table (append) --- */
+
+.table-full-outer {
+  width: 100%;
+  padding: 2rem 1.25rem;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, rgba(11,17,32,0.02), transparent);
+  margin-top: 1.25rem;
+  border-radius: 12px;
+}
+
+/* inner container removes max-width so table can extend edge-to-edge inside the page padding */
+.table-full {
+  width: 100%;
+  max-width: none;
+}
+
+/* table fills the container and columns size naturally */
+.table-full .table {
+  width: 100%;
+  table-layout: auto; /* allow natural column sizes */
+  border-collapse: collapse;
+  margin-bottom: 0;
+}
+
+/* cell spacing and colors */
+.table-full th,
+.table-full td {
+  padding: .85rem 1rem;
+  vertical-align: middle;
+  color: #e6eef8;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+/* allow email to wrap sensibly across lines */
+.table-full td.email {
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  max-width: none;
+}
+
+/* keep name readable but allow longer names to ellipsize only when necessary */
+.table-full td.name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- Improve table contrast & row highlighting (append) --- */
+
+/* Make the table area clearly dark so text reads well */
+.table-full-outer {
+  background: linear-gradient(180deg, rgba(8,12,18,0.96), rgba(6,10,16,0.98));
+  color: #e6eef8; /* primary text color for the area */
+}
+
+/* Stronger column headings */
+.table-full thead th {
+  color: rgba(255,255,255,0.85);
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Make data cells fully opaque and readable */
+.table-full tbody td {
+  color: #e6eef8;
+  opacity: 1;
+  vertical-align: middle;
+}
+
+/* Row hover highlight and subtle alternating rows */
+.table-full tbody tr:hover {
+  background: rgba(255,255,255,0.02);
+}
+.table-full tbody tr:nth-child(odd) {
+  background: rgba(255,255,255,0.01);
+}
+
+/* Improve visibility of small/secondary text */
+.table-full .small,
+.table-full .muted {
+  color: rgba(230,240,255,0.72);
+}
+
+/* If any other rule reduces opacity, enforce readability in this region */
+.table-full-outer .table,
+.table-full-outer .table th,
+.table-full-outer .table td {
+  color: inherit !important;
+  opacity: 1 !important;
+}

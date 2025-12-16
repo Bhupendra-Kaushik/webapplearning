@@ -1,0 +1,113 @@
+﻿@using System.Linq
+@model IEnumerable<LearningWebApp.Models.Customer>
+
+@{
+    ViewData["Title"] = "Customer List";
+    var total = Model?.Count() ?? 0;
+    var recent30 = Model?.Count(m => m.CreatedDate >= DateTime.UtcNow.AddDays(-30)) ?? 0;
+}
+
+<div class="hero-outer" role="region" aria-label="Customers">
+    <div class="hero">
+        <div class="left">
+            <div class="kicker fade-in">Customers</div>
+
+            <h1 class="display-4 fade-in delay-1">Customer <strong>List</strong></h1>
+            <p class="lead fade-in delay-1">Browse and inspect customer records. Use the actions to add new customers or return home.</p>
+
+            <div class="mt-3 fade-in delay-2" role="group" aria-label="Customer actions">
+                <a asp-controller="Customers" asp-action="Create" class="cta" role="button">Add New Customer</a>
+                <a asp-controller="Home" asp-action="Index" class="cta secondary" role="button">Home</a>
+            </div>
+
+            <div class="stats fade-in delay-2" style="margin-top:1rem;">
+                <div class="stat">
+                    <div class="num">@total</div>
+                    <div class="small muted">Customers</div>
+                </div>
+                <div class="stat">
+                    <div class="num">@recent30</div>
+                    <div class="small muted">New (30d)</div>
+                </div>
+            </div>
+
+            <div class="testimonial fade-in" style="margin-top:1rem;">
+                <strong>“Manage customer data quickly and confidently.”</strong>
+                <div class="small muted">— Admin</div>
+            </div>
+        </div>
+
+        <!-- keep a decorative right column but don't constrain the table to it -->
+        <div class="right" aria-hidden="true">
+            <div class="preview-frame fade-in delay-1" aria-hidden="true" style="height:260px;">
+                <!-- optional small preview / illustration retained -->
+                <svg viewBox="0 0 320 180" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" style="display:block">
+                    <defs>
+                        <linearGradient id="g1b" x1="0" x2="1">
+                            <stop offset="0" stop-color="#7c5cff" stop-opacity="0.95" />
+                            <stop offset="1" stop-color="#4fb6ff" stop-opacity="0.95" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="6" y="6" rx="10" width="308" height="168" fill="url(#g1b)" opacity="0.12"></rect>
+                    <g fill="#fff" opacity="0.95">
+                        <circle cx="70" cy="50" r="10"></circle>
+                        <rect x="110" y="40" rx="6" width="160" height="22"></rect>
+                        <rect x="110" y="74" rx="6" width="140" height="16"></rect>
+                        <rect x="110" y="104" rx="6" width="100" height="12"></rect>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-blob" aria-hidden="true"></div>
+</div>
+
+<!-- Full-width table section — this fills the page area under the hero -->
+<div class="table-full-outer" role="region" aria-label="Customer table">
+    <div class="table-full">
+        <h2 class="small" style="margin:0 0 .6rem 0;">Customer records</h2>
+
+        <div class="table-responsive">
+            <table class="table table-borderless table-hover preview-table">
+                <thead>
+                    <tr>
+                        <th class="text-muted small">ID</th>
+                        <th class="text-muted small">Name</th>
+                        <th class="text-muted small">Email</th>
+                        <th class="text-muted small">Created</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="id align-middle">@item.CustomerID</td>
+                                <td class="name align-middle">@item.FirstName @item.LastName</td>
+                                <td class="email align-middle">@item.Email</td>
+                                <td class="created align-middle">@item.CreatedDate.ToString("yyyy-MM-dd HH:mm")</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4" class="text-center muted small">No customers found.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div style="margin-top:.75rem; display:flex; justify-content:flex-end; gap:.5rem;">
+            <a asp-controller="Customers" asp-action="Create" class="cta" role="button">Add Customer</a>
+            <a asp-controller="Customers" asp-action="Index" class="btn-ghost" role="button">Refresh</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @* If client validation or additional scripts are needed, include them here. *@
+}
