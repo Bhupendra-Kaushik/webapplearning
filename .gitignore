@@ -1,99 +1,59 @@
 ﻿## Build results
-
 bin/
-
 obj/
-
 [Bb]uild/
-
 [Dd]ebug/
-
 [Rr]elease/
-
 x64/
-
 x86/
- 
+
 ## Visual Studio
-
 .vs/
-
 *.suo
-
 *.user
-
 *.userosscache
-
 *.sln.docstates
- 
+
 ## Rider / JetBrains
-
 .idea/
-
 *.sln.iml
- 
+
 ## VS Code
-
 .vscode/
- 
+
 ## ASP.NET Core
-
-appsettings.Development.json
-
 appsettings.Local.json
- 
+
 ## Environment variables
-
 .env
-
 .env.*
- 
+
 ## Logs
-
 *.log
- 
+
 ## Test results
-
 TestResults/
-
 *.trx
- 
+
 ## NuGet
-
 *.nupkg
-
 *.snupkg
-
 .nuget/
-
 packages/
- 
-## Publish output
 
+## Publish output
 publish/
 
-wwwroot/
- 
 ## Coverage
-
 coverage/
-
 *.coverage
-
 *.coveragexml
- 
+
 ## OS files
-
 .DS_Store
-
 Thumbs.db
- 
+
 ## Backup files
-
 *.bak
-
 *.tmp
-
 *.old
-
- 

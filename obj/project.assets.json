@@ -2438,11 +2438,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AJ929GH\\OneDrive - EY\\Documents\\TaskManagement\\LearningWebApp\\LearningWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\AJ929GH\\OneDrive - EY\\Documents\\TaskManagement\\NewWebApp\\webapplearning\\LearningWebApp.csproj",
       "projectName": "LearningWebApp",
-      "projectPath": "C:\\Users\\AJ929GH\\OneDrive - EY\\Documents\\TaskManagement\\LearningWebApp\\LearningWebApp.csproj",
+      "projectPath": "C:\\Users\\AJ929GH\\OneDrive - EY\\Documents\\TaskManagement\\NewWebApp\\webapplearning\\LearningWebApp.csproj",
       "packagesPath": "C:\\Users\\AJ929GH\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AJ929GH\\OneDrive - EY\\Documents\\TaskManagement\\LearningWebApp\\obj\\",
+      "outputPath": "C:\\Users\\AJ929GH\\OneDrive - EY\\Documents\\TaskManagement\\NewWebApp\\webapplearning\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
